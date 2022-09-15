@@ -34,15 +34,7 @@ def dump():
 
 @app.post("/load")
 def load():
-    # TODO: Podrias usar Pandas to sql, o iterar y hacer puros commit
-    # TODO: Un ejemplo posible (aunque es mas eficiente el df.to_sql..)
-    # with get_session() as (session, _):
-    #         for d in tqdm(self.data_dict):
-    #             d.update({"CurrentDate": current_date})
-    #             t = RawFireIncidentsModel(**d)
-    #             session.add(t)
-
-    #         session.commit()
+   #pdx.to_avro()
     pass
 
 dump()
