@@ -1,0 +1,1 @@
+CREATE TABLE Products(id INTEGER);
