@@ -1,4 +1,4 @@
-# Challenge titulo
+# Challenge 
 
 ## Objective
     The objective of this challenge is to create an API able to move data in .CSV format to a postgresql database
