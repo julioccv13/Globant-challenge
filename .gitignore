@@ -1,2 +1,4 @@
+# Ignore challenge info
 *.pdf
+# ingore venv data
 /myenv/
