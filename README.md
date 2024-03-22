@@ -61,10 +61,3 @@ This project involves migrating historic data from CSV files to a PostgreSQL dat
    - Run `backup_script.py` to create backups of PostgreSQL tables.
    - Adjust the script to customize backup configurations as needed.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests if you have any suggestions, improvements, or bug fixes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).

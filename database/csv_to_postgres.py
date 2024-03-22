@@ -5,7 +5,7 @@ from utils.database_handler import migrate_csv_to_postgres
 
 if __name__ == "__main__":
     # Specify the directory containing CSV and XLS files
-    data_dir = 'data'
+    data_dir = 'database\data'
 
     # Iterate over files in the data directory
     for file_name in os.listdir(data_dir):
