@@ -1,5 +1,18 @@
-from utils.database_handler import connect_to_database, create_backup
+from utils.db_backup import *
+from utils.db_conn import *
 
-if __name__ == "__main__":
-    table_name = 'example_table'
-    create_backup(table_name)
+# Database connection parameters
+dbname = 'postgres'
+user = 'postgres'
+password = 'postgres'
+host = 'localhost'
+port = '5434'
+
+# Directory for back up files
+backup_directory = r'database\data\backup'
+
+# Connect to PostgreSQL
+engine, metadata = connect_to_database(dbname, user, password, host, port)
+
+# Backup all tables
+backup_tables(engine, backup_directory)

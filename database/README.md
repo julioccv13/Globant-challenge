@@ -1,26 +1,24 @@
-# Data Migrations
+# Database management
 
 This directory contains scripts and documentation related to migrating data from CSV files to PostgreSQL and backing up data from PostgreSQL tables to AVRO format.
 
-## csv_to_postgres.py
+## migration.py
 
-Python script for migrating data from CSV files to PostgreSQL tables.
+This service provides functionality for interacting with a PostgreSQL database. It includes functions for establishing a connection to the database, creating tables, and inserting data.
 
-
-## How to Use
-
-1. Place your CSV files in the `data/` directory.
-2. Run the `csv_to_postgres.py` script to migrate data to PostgreSQL.
-3. Adjust the script according to your CSV file structure and PostgreSQL table schema.
+## Features
+- Connect to a PostgreSQL database.
+- Create tables with specified schemas.
+- Read data from CSV or XLS files and insert it into the database.
 
 ## backup.py
 
-Python script for backing up PostgreSQL tables to AVRO files.
+This service connects to a PostgreSQL database, reads all tables, and creates backups of each table in Avro format.
 
-## How to Use
+## Features
 
-1. Ensure that PostgreSQL is running and accessible.
-2. Run the `backup.py` script to create backups of PostgreSQL tables.
-3. AVRO files will be generated in the `backups/` directory.
+- Connects to a PostgreSQL database using SQLAlchemy.
+- Dynamically generates Avro schema based on the database table schema.
+- Backs up each table to Avro format.
 
 
