@@ -2,7 +2,7 @@ from utils.db_conn import *
 from utils.db_recovery import *
 
 # Define the date and the backup directory path using the provided date format
-date = '2024-03-23'
+date = str(input("Select date to recover in format YYYY-MM-DD: "))
 backup_dir = rf"database\data\backup\{date}"
 
 # Connect to PostgreSQL
