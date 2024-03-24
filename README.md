@@ -15,11 +15,11 @@ This project involves migrating historic data from CSV files to a PostgreSQL dat
 - Ensure Docker is installed and running on your local machine.
 - Modify the Dockerfile to use the locally installed PostgreSQL database.
 
-### 3. Flask Application
+### 3. FastAPI Application
 
-- Install Python dependencies using `pip install -r requirements.txt`.
-- Update the Flask application (`app.py`) to connect to your PostgreSQL database.
-- Run the Flask application locally using `python app.py`.
+- Install the required dependencies listed in `requirements.txt` using `pip install -r requirements.txt`.
+- Configure the database connection parameters in the code or environment variables.
+- Start the FastAPI application by running `uvicorn main:app --reload`.
 
 ### 4. Backup and Recovery
 
