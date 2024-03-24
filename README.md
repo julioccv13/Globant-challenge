@@ -1,4 +1,4 @@
-# globant-challenge
+# Globant-challenge
 
 This project involves migrating historic data from CSV files to a PostgreSQL database, creating a REST API service to receive new data, and implementing backup and restore features.
 
