@@ -6,13 +6,6 @@ from sqlalchemy import Column, String, Integer
 # Directory containing CSV and Excel files
 data_directory = 'database\data'
 
-# Database connection parameters
-dbname = 'postgres'
-user = 'postgres'
-password = 'postgres'
-host = 'localhost'
-port = '5434'
-
 # Define schemas for different tables based on file names
 table_schemas = {
     "hired_employees": {"id": Integer, "name": String, "datetime": String, "department_id": Integer, "job_id": Integer},
@@ -21,7 +14,7 @@ table_schemas = {
 }
 
 # Connect to database
-engine, metadata = connect_to_database(dbname, user, password, host, port)
+engine, metadata = connect_to_database()
 
 # Read data from files in the folder and insert into database
 for file_name in os.listdir(data_directory):
@@ -41,5 +34,4 @@ for file_name in os.listdir(data_directory):
             metadata.create_all(engine)        
         # Read and insert data
         insert_data(file_path, engine, schema)
-
 print("Data insertion completed.")

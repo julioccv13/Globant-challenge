@@ -4,7 +4,10 @@ from sqlalchemy import MetaData, Table, Column, inspect
 import logging
 
 # Configure logging
-logging.basicConfig(filename='null_rows.log', level=logging.INFO)
+log_dir = os.path.join('database', 'data', 'logs')
+os.makedirs(log_dir, exist_ok=True)
+log_file = os.path.join(log_dir, 'logs.log')
+logging.basicConfig(filename=log_file, level=logging.INFO)
 
 # Function to create table with specified schema
 def create_table(engine, table_name, schema):
