@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-class HiredEmployee(Base):
+class HiredEmployees(Base):
     __tablename__ = 'hired_employees'
 
     id = Column(Integer, primary_key=True, index=True)
@@ -12,13 +12,13 @@ class HiredEmployee(Base):
     department_id = Column(Integer)
     job_id = Column(Integer)
 
-class Department(Base):
+class Departments(Base):
     __tablename__ = 'departments'
 
     id = Column(Integer, primary_key=True, index=True)
     department = Column(String)
 
-class Job(Base):
+class Jobs(Base):
     __tablename__ = 'jobs'
 
     id = Column(Integer, primary_key=True, index=True)
