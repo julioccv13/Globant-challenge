@@ -10,12 +10,10 @@ This directory contains files and documentation related to the REST API for inte
 
 ## API Endpoints
 
-- `/insert-data/`: POST endpoint for inserting data into the database. Accepts JSON payloads with the data to be inserted and the name of the table.
-- Request Body: JSON data representing an employee, department, or job
-- Example: {
-  "id": "12",
-  "department": "IT",
-}
+### `/insert-data/`: 
+- POST endpoint for inserting data into the database. Accepts JSON payloads with the data to be inserted.
+- Make sure to include the table name as a query parameter in the URL.
+- Example = "http://localhost:8000/insert-data/?table_name=departments"
 
 ## Models
 
@@ -38,4 +36,4 @@ This directory contains files and documentation related to the REST API for inte
 - job (String)
 
 ## Logging
-Exceptions during data insertion are logged to a file named logs inside the api/logs folder.
+Exceptions during database connection and data insertion are logged to a file named logs inside the api/logs folder.
