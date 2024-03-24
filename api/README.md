@@ -1,14 +1,43 @@
 # API Service
 
-This directory contains files and documentation related to the REST API service.
+This directory contains files and documentation related to the REST API service built with Flask and SQLAlchemy that the receives new data for the database. 
 
-## app.py
+## Features
 
-Flask application for the REST API service.
+- Insert new employees, departments, and jobs into the database
+- Dynamically route incoming data to the appropriate table based on specific criteria
+- Log exceptions during data insertion to a file
 
-## How to Use
+## API Endpoints
 
-1. Install the required Python dependencies listed in `requirements.txt`.
-2. Run the Flask application:
-3. The API service will be available at `http://localhost:5000`.
-4. Refer to `app.py` for available endpoints and their functionalities.
+- Insert Data
+- URL: /api/insert
+- Method: POST
+- Request Body: JSON data representing an employee, department, or job
+- Example: {
+  "id": "12",
+  "department": "IT",
+}
+
+## Models
+
+### HiredEmployee
+#### Fields:
+- id (Integer, Primary Key)
+- name (String)
+- datetime (String)
+- department_id (Integer)
+- job_id (Integer)
+
+### Departments
+#### Fields:
+- id (Integer, Primary Key)
+- department (String)
+
+### Jobs
+#### Fields:
+- id (Integer, Primary Key)
+- job (String)
+
+## Logging
+Exceptions during data insertion are logged to a file named logs inside the api/logs folder.
