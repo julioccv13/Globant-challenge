@@ -17,22 +17,29 @@ password = 'postgres'
 host = 'localhost'
 port = '5434'
 
-# Function to connect to postgres
+# Function to connect to PostgreSQL
 def connect_to_database():
     try:
         db_uri = f"postgresql://{user}:{password}@{host}:{port}/{dbname}"
         engine = create_engine(db_uri)
-        metadata = MetaData()
-        return engine, metadata
+        return engine
     except Exception as e:
         logging.error("Error connecting to database:", e)
         return None, None
-    
-engine, metadata = connect_to_database()
+
+engine = connect_to_database()
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Insert
-    
+# Initialize metadata
+metadata = MetaData()
+
+# Define tables
+Base.metadata.create_all(bind=engine)
+
+# Reflect all defined tables
+metadata.reflect(bind=engine)
+
+# Insert function
 def insert_data(session, table_name, data):
     try:
         table = metadata.tables[table_name]
