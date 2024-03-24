@@ -17,7 +17,7 @@ def get_db():
 def insert_data_endpoint(data: dict, db: Session = Depends(get_db)):
     try:
         # Determine the table name from the request data
-        table_name = data.get("table_name")
+        table_name = data.table_name
         if table_name is None:
             raise HTTPException(status_code=400, detail="Table name not provided in request data")
 
