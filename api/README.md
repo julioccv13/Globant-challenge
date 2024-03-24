@@ -6,14 +6,19 @@ This directory contains files and documentation related to the REST API for inte
 
 1. **FastAPI Application**: Provides REST API endpoints for interacting with the database.
 2. **Database Connection**: Establishes a connection to a PostgreSQL database using SQLAlchemy.
-3. **Database Models**: Defines SQLAlchemy models representing database tables.
 
 ## API Endpoints
 
-### `/insert-data/`: 
+### `/process-data/`: 
 - POST endpoint for inserting data into the database. Accepts JSON payloads with the data to be inserted.
-- Make sure to include the table name as a query parameter in the URL.
-- Example = "http://localhost:8000/insert-data/?table_name=departments"
+- Be sure to include the name of the table you want to insert in and the data
+- Example = {
+     "table_name": "jobs",
+     "data": [
+         {"id": 200, "job": 'Test'},
+         {"id": 300, "job": 'test'},
+     ]
+ }
 
 ## Models
 
