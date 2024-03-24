@@ -3,12 +3,6 @@ import pandas as pd
 from sqlalchemy import MetaData, Table, Column, inspect
 import logging
 
-# Configure logging
-log_dir = os.path.join('database', 'data', 'logs')
-os.makedirs(log_dir, exist_ok=True)
-log_file = os.path.join(log_dir, 'logs.log')
-logging.basicConfig(filename=log_file, level=logging.INFO)
-
 # Function to create table with specified schema
 def create_table(engine, table_name, schema):
     metadata = MetaData()

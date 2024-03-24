@@ -1,18 +1,16 @@
 # API Service
 
-This directory contains files and documentation related to the REST API service built with Flask and SQLAlchemy that the receives new data for the database. 
+This directory contains files and documentation related to the REST API for interacting with a PostgreSQL database using FastAPI 
 
 ## Features
 
-- Insert new employees, departments, and jobs into the database
-- Dynamically route incoming data to the appropriate table based on specific criteria
-- Log exceptions during data insertion to a file
+1. **FastAPI Application**: Provides REST API endpoints for interacting with the database.
+2. **Database Connection**: Establishes a connection to a PostgreSQL database using SQLAlchemy.
+3. **Database Models**: Defines SQLAlchemy models representing database tables.
 
 ## API Endpoints
 
-- Insert Data
-- URL: /api/insert
-- Method: POST
+- `/insert-data/`: POST endpoint for inserting data into the database. Accepts JSON payloads with the data to be inserted and the name of the table.
 - Request Body: JSON data representing an employee, department, or job
 - Example: {
   "id": "12",
