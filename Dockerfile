@@ -2,9 +2,9 @@ FROM python:3.11
 
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /GLOBANT-CHALLENGE
+WORKDIR /globant-challenge
 
-COPY . /GLOBANT-CHALLENGE
+COPY . /globant-challenge
 
 RUN pip install --no-cache-dir -r requirements.txt
 
