@@ -1,4 +1,3 @@
-import logging
 import uvicorn
 from typing import List, Dict, Any
 from fastapi import FastAPI, HTTPException
