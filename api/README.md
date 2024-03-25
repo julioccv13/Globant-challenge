@@ -10,7 +10,7 @@ This directory contains files and documentation related to the REST API for inte
 ## API Endpoints
 
 ### `/process-data/`: 
-- POST endpoint for inserting data into the database. Accepts JSON payloads with the data to be inserted.
+- GET endpoint to execute specific requirement query
 - Be sure to include the name of the table you want to insert in and the data
 - Example = {
      "table_name": "jobs",
@@ -20,25 +20,12 @@ This directory contains files and documentation related to the REST API for inte
      ]
  }
 
-## Models
+### `/hires_per_quarter/`: 
+- GET endpoint to execute specific requirement query
+- Finds number of employees hired for each job and department in 2021 divided by quarter
+- Response: CSV file containing the fetched data, stored in the api/data folder.
 
-### HiredEmployee
-#### Fields:
-- id (Integer, Primary Key)
-- name (String)
-- datetime (String)
-- department_id (Integer)
-- job_id (Integer)
-
-### Departments
-#### Fields:
-- id (Integer, Primary Key)
-- department (String)
-
-### Jobs
-#### Fields:
-- id (Integer, Primary Key)
-- job (String)
-
-## Logging
-Exceptions during database connection and data insertion are logged to a file named logs inside the api/logs folder.
+### `/above_avg_department_hires/`: 
+- POST endpoint for inserting data into the database. Accepts JSON payloads with the data to be inserted.
+- List of ids, name and number of employees hired of each department that hired more employees than the mean of employees hired in 2021 for all the departments
+- Response: CSV file containing the fetched data, stored in the api/data folder.

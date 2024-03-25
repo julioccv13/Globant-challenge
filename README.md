@@ -1,28 +1,24 @@
 # Globant-challenge
 
-This project involves migrating historic data from CSV files to a PostgreSQL database, creating a REST API service to receive new data, and implementing backup and restore features.
+This Python service provides functionality for ingesting historic data into a PostgreSQL database, exposing endpoints via FastAPI for data manipulation, and includes backup and recovery services for the database tables.
 
-## Setup
+## Description
 
-### 1. PostgreSQL Database
+### 1. Database Connection
 
-- Install PostgreSQL locally on your machine. You can download it from [PostgreSQL Downloads](https://www.postgresql.org/download/).
-- Create a PostgreSQL database and define tables as needed for your project.
+The database connection module establishes a connection with a PostgreSQL database to ingest historic data. It provides functions to interact with the database, such as inserting data and executing queries.
 
-### 2. Docker Container (Optional)
+### 2. FastAPI Service
 
-- If you prefer, you can use Docker for local deployment.
-- Ensure Docker is installed and running on your local machine.
-- Modify the Dockerfile to use the locally installed PostgreSQL database.
+The FastAPI service module utilizes FastAPI to create a REST API for interacting with the PostgreSQL database. It exposes three endpoints:
+- `/process_data`: This POST endpoint allows users to insert new data into the connected PostgreSQL database. Users can send data in JSON format to be stored in the database.
+- `/hires_per_quarter`: This GET endpoint executes a specific query on the connected PostgreSQL database and returns the result.
+- `/above_avg_department_hires`: This GET endpoint executes a second specific query requirement on the connected PostgreSQL database and returns the result. 
 
-### 3. FastAPI Application
-
-- Install the required dependencies listed in `requirements.txt` using `pip install -r requirements.txt`.
-- Configure the database connection parameters in the code or environment variables.
-- Start the FastAPI application by running `uvicorn main:app --reload`.
-
-### 4. Backup and Recovery
+### 3. Backup and Recovery Service
 
 - Backups are stored on the local file system in the `backups/` directory.
 - Use the provided backup script (`backup.py`) to create backups of PostgreSQL tables in AVRO format.
 - Use the provided recovery script (`recovery.py`) to restore PostgreSQL tables from backup files in AVRO format.
+
+

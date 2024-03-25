@@ -1,6 +1,6 @@
 import os
 import logging
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine
 
 # Configure logging
 log_dir = os.path.join('database', 'data', 'logs')
